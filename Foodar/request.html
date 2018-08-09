@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Request</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style type="text/css">
+
+	</style>
+	<script type="text/javascript">
+	function getMoney(){
+		var choice=document.getElementsByClassName("choice");
+		var tip=document.getElementsByClassName("tip");
+		var money;
+		var choiceValue;
+		var tipValue;
+		for(var i=0;i<choice.length;i++){
+			if(choice[i].checked){
+				choiceValue=choice[i].value;
+			}
+		}
+		for(var x=0;x<tip.length;x++){
+			if(tip[x].checked){
+				tipValue=tip[x].value;
+			}
+		}
+		if(choiceValue==="classic"){
+			money=3;
+		}
+		else if(choiceValue==="premium"){
+			money=5;
+		}
+		else if(choiceValue==="royal"){
+			money=10;
+		}
+		if(tipValue==="10"){
+			money*=1.1;
+		}
+		else if(tipValue==="15"){
+			money*=1.15;
+		}
+		else if(tipValue==="20"){
+			money*=1.2;
+		}
+		document.getElementById("subTotal").innerHTML="Total: "+money;
+	}
+	</script>
+</head>
+<body>
+	<div class="header">
+		<h1>SUBMIT YOUR REQUEST</h1>
+	</div>
+	<div class="form">
+		<h4>Please fill out the form below.</h4>
+		<br/>
+		<h4>Address:</h4>
+		<input type="text" name="Address" style="margin-left: 20px";>
+		<br/>
+		<h4>Choose Your Style</h4>
+		<table border="1">
+		<tr>
+		<td>
+		<p style="text-align: center;">Classic <br/>This is a classic treatment</p>
+		<div style="text-align: center;">
+		<input class="choice" type="radio" name="choice" value="classic" />
+		</div>
+		</td>
+		<td>
+		<p style="text-align: center;">Premium <br/>pinky's up</p>
+		<div style="text-align: center;">
+		<input class="choice" type="radio" name="choice" value="premium" />
+		</div>
+		</td>
+		<td>
+		<p style="text-align: center;">Royal <br/>Your food is served on a silver platter.</p>
+		<div style="text-align: center;">
+		<input class="choice" type="radio" name="choice"  value="royal" />
+		</div>
+		</td>
+			</tr>
+		</table>
+		<h4>Restaurant:</h4>
+		<br/>
+		<input type="text" name="Name" style="margin-left: 20px;">
+		<h4>Tip:</h4>
+		<table border="1">
+			<tr>
+				<td>
+					<p style="text-align: center;">10%<br>They did their job.</p>
+					<div style="text-align: center;">
+					<input class="tip" type="radio" name="tip" value="10"/>
+					</div>
+				</td>
+				<td>
+					<p style="text-align: center;">15%<br>They made you feel special.</p>
+					<div style="text-align: center;">
+					<input class="tip" type="radio" name="tip" value="15"/>
+					</div>
+				</td>
+				<td>
+					<p style="text-align: center;">20% <br>I wanna give them more, but this is all I have!</p>
+					<div style="text-align: center;">
+					<input class="tip" type="radio" name="tip" value="20" />
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<button onclick="getMoney()">Calculate</button>
+	<h1 id="subTotal" style="text-align: center;">calculate when ready</h1>
+	<div class="submit" style="text-align: center;">
+	<button type="submit">REQUEST</button>
+</body>
+</html>
