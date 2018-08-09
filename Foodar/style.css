@@ -1,0 +1,35 @@
+.heading{
+	font-family: monospace;
+}
+body{
+	background-color: lightblue;
+}
+input{
+	margin-top: 5px;
+	margin-bottom: 3px;
+	width:250px;
+	padding: 5px;
+	box-sizing: border-box;	
+}
+nav{
+	margin-top: 5px;
+	margin-bottom: 3px;
+	width:250px;
+	padding: 5px;
+	box-sizing: border-box;	
+}
+footer{
+	position:absolute;
+	width:100%;
+	bottom:0;
+}
+.privacy{
+	text-align: center;
+}
+a:hover{
+	background-color:pink;
+	color:red;
+}
+a:visited{
+	color:green;
+}
