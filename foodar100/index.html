@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="functions.js"></script>
+</head>
+<body>
+	<div id="bannerAll" style="display: none;">
+		<img id="banner" src="banner.jpg" width="100%"
+		style="position:fixed; z-index:3;"
+		 height="40px">
+		 <div style="text-align: right;">
+		 <button onclick="closeImg()" style="position:fixed;z-index: 5;">close</button>
+		 </div>
+	</div>
+	<div id="title">
+		<h1 style="padding: 10px;  display: inline;">Foodar<a href="index.html"><img src="logo.png" height="30px"></a>
+			<button style="float:  right;">Sign-in/Register</button>
+		</h1>
+	</div>
+	<hr/>
+	<div class="image">
+		<img src="recipe.jpg" alt="recipe" style="display:block;margin-left: auto;margin-right: auto; width: 50%; opacity: 0.9;  ">
+		<div style="color:white;
+		font-size:30px;
+		font-weight:bold;
+		text-align: center;
+		margin-top: auto;">
+		Try a New Meal Today
+		</div>
+	</div>
+	<h1>Find a driver near you!</h1>
+	<h3>Type in your zipcode below and click Go! to find a driver near you</h3>
+	<form>
+	<input id="zipcode" type="number" name="zipcode" maxlength="5">
+	<button id="go" type="submit">Go!</button>
+	</form>
+	<hr/>
+	<div class="footer">
+		<nav>
+			<a href="index.html">Home</a>
+			<br>
+			<a href="register.html">Register</a>
+			<br>
+			<a href="about.html">About</a>
+			<br>
+			<a href="request.html">Request</a>
+		</nav>
+		<div class="privacy">
+		<a href="#">Privacy Policy</a>
+		<br>
+		<a href="#">Terms & Conditions</a>
+		</div>
+		<h5 style="float: right;">Lucky you :)</h5>
+	</div>
+	<script type="text/javascript">
+		setTimeout(function(){
+			document.getElementById("bannerAll").style.display='block';
+		},5000);
+		
+		function closeImg(){
+			document.getElementById("bannerAll").style.display ="none";
+		}
+		var btn = document.getElementById("go");
+		btn.addEventListener("click",function(){
+			var zipcode = document.getElementById("zipcode").value;
+			if(zipcode<20000){
+				alert("it is inside the area");
+			}
+			else{
+				alert("it is outside the area");
+			}
+		});
+	</script>
+</body>
+</html>
