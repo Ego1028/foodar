@@ -5,12 +5,16 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div id="ADbanner" style="text-align: center; padding: 10px;">
-		<img src="banner.jpg" width="80%">
+	<div id="bannerAll" style="display: none;">
+		<img id="banner" src="banner.jpg" width="100%"
+		style="position:fixed; z-index:3;"
+		 height="40px">
+		 <div style="text-align: right;">
+		 <button onclick="closeImg()" style="float:right;position:fixed;z-index: 5;">close</button>
+		 </div>
 	</div>
-	<hr/>
 	<div id="title">
-		<h1 style="padding: 10px;">Foodar<img src="logo.png" height="30px">
+		<h1 style="padding: 10px;  display: inline;">Foodar<img src="logo.png" height="30px">
 			<button style="float:  right;">Sign-in/Register</button>
 		</h1>
 	</div>
@@ -44,5 +48,14 @@
 		</div>
 		<h5 style="float: right;">Lucky you :)</h5>
 	</div>
+	<script type="text/javascript">
+		setTimeout(function(){
+			document.getElementById("bannerAll").style.display='block';
+		},5000);
+		
+		function closeImg(){
+			document.getElementById("bannerAll").style.display ="none";
+		}
+	</script>
 </body>
 </html>
